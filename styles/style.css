@@ -36,12 +36,18 @@ a{
 .fs-paragraph{
     font-size: clamp(0.875rem, 0.7rem + 0.875vw, 1.75rem);
 }
+.fs-paragraph-2{
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+}
 .fs-span{
     font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
 }
-
+.fs-span-2{
+    font-size: clamp(0.8125rem, 0.75rem + 0.3125vw, 1.125rem);
+}
 /*main styles*/
 .info-box{
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -49,21 +55,34 @@ a{
     background: transparent;
     border-radius: 0;
     border: none;
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid #323232;
+    color: #323232;
     padding-left: 0;
     padding-bottom: 20px;
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+}
+.text-white .form-control{
+    border-bottom: 2px solid white;
     color: white;
 }
-.form-control::placeholder{
+
+.text-white .form-control::placeholder{
     color: white;
     font-size: clamp(1rem, 0.775rem + 1.125vw, 2.125rem);
 }
+.form-control::placeholder{
+    color: #323232;
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+}
 .form-control:focus {
-    color: white;
     background-color: transparent;
     border-color: unset;
     box-shadow: none;
 }
+.text-white .form-control:focus {
+    color: white;
+}
+
 .form-check-input:checked {
     background-color: var(--color-corp);
     border-color: var(--color-corp);
@@ -79,9 +98,26 @@ a{
   --bs-form-check-bg-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.79917 0.328613L2.54548 6.10484L1.02022 4.94677H0.172852L2.54548 8.8023L8.64654 0.328613H7.79917Z' fill='white'/%3E%3C/svg%3E");
   background-size: 65% auto;
 }
+.select-control{
+    border: 1px solid #666666;
+    opacity: 0.7;
+    padding: 5px 10px;
+}
 /*breackpoints*/
+@media(max-width: 990px){
+    .info-box{
+        position: static;
+        top: unset;
+        transform: unset;
+    }
+}
 @media(max-width: 768px){
     .form-control{
     padding-bottom: 10px;
+    }
+}
+@media(max-width: 360px){
+    .select-control{
+        padding: 3px 5px;
     }
 }
