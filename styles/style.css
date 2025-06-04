@@ -14,6 +14,9 @@ body{
 .text-corp{
     color: var(--color-corp);
 }
+.text-blue{
+    color: var(--color-blue);
+}
 .bg-light{
     background:#F9F9F9;
 }
@@ -22,6 +25,9 @@ body{
 }
 .color-online{
     color: #05FF00;
+}
+.w-lg-40{
+    width: 40%;
 }
 /*ui kit*/
 a{
@@ -202,6 +208,9 @@ a{
     border-color: unset;
     border-radius: 15px;
 }
+.avatar-height{
+    height: 300px;
+}
 /*breackpoints*/
 @media (min-width: 1650px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
@@ -247,6 +256,9 @@ a{
     .pt-sm-custom{
         padding-top: 100px !important;
     }
+    .w-lg-40{
+    width: 100%;
+}
 }
 @media(max-width: 768px){
     .form-control{
@@ -260,6 +272,17 @@ a{
 }
 .page-link{
     padding: 3px 15px;
+}
+.fs-large .fs-paragraph,.fs-large .fs-title {
+    font-size: 24px;
+}
+.fs-large .fs-span-2 {
+    font-size: 20px;
+}
+}
+@media(max-width: 576px){
+    .avatar-height{
+    height: 400px;
 }
 }
 @media(max-width: 360px){
