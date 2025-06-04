@@ -1,5 +1,6 @@
 :root{
     --color-corp: #D0102E;
+    --color-blue: #0EA5E9
 }
 body{
     font-family: "Arsenal", sans-serif;
@@ -10,10 +11,22 @@ body{
 .h-100vh{
     height: 100vh;
 }
-
+.text-corp{
+    color: var(--color-corp);
+}
+.bg-light{
+    background:#F9F9F9;
+}
+.bg-corp{
+    background: var(--color-corp);
+}
+.color-online{
+    color: #05FF00;
+}
 /*ui kit*/
 a{
     color: inherit;
+    text-decoration: none;
 }
 .btn{
     font-size: clamp(1rem, 0.825rem + 0.875vw, 1.875rem);
@@ -24,11 +37,28 @@ a{
     background: var(--color-corp);
     color: white;
 }
+.btn-blue{
+    background: var(--color-blue);
+    color: white;
+}
 .btn-corp:hover{
     background: white;
     color: var(--color-corp);
 }
-
+.btn-blue:hover{
+    color: var(--color-blue);
+    background: white;
+    outline: 1px solid var(--color-blue);
+}
+.navbar-toggler-icon {
+    background-image: url('/icons/burger.svg');
+}
+.navbar-toggler{
+    border: none;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
 /*typography*/
 .fs-title{
     font-size: clamp(0.875rem, 0.525rem + 1.75vw, 2.625rem);
@@ -103,18 +133,134 @@ a{
     opacity: 0.7;
     padding: 5px 10px;
 }
+.dropdown-menu[data-bs-popper] {
+    right: 0;
+    left: unset;
+}
+.dropdown-toggle::after {
+    display: none;
+}
+.dropdown-menu{
+    box-shadow: 0 4px 30px 5px rgba(159, 159, 159, 0.25);
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+}
+.avatar{
+    width: 35px;
+    height: 35px;
+}
+.navbar-collapse{
+    transition: all 0.3s ease;
+}
+.navbar-collapse.collapse.show{
+    background: var(--color-corp);
+}
+.search .select-control{
+    border: none;
+    border-radius: 50px;
+    background: white;
+    color: #9F9F9F;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 100%;
+}
+.select-control-box{
+    position: relative;
+}
+.select-control-box::after {
+    display: inline-block;
+    border: none;
+    content: "\F282";
+    font-family: 'bootstrap-icons';
+    font-size: 1rem;
+    vertical-align: middle;
+    top: 60%;
+    transform: translateY(-50%);
+    right: 20px;
+    z-index: 2;
+    position: absolute;
+}
+.pagination{
+    --bs-pagination-border-color: unset;
+    background: #F9F9F9;
+    --bs-pagination-bg: #F9F9F9;
+    --bs-pagination-color: #9F9F9F;
+    --bs-pagination-font-size: 1.5rem;
+    padding: 10px 30px;
+    border-radius: 50px;
+    align-items: center;
+}
+.page-link{
+    padding: 5px 20px;
+}
+.active>.page-link, .page-link.active {
+    color: white;
+    background-color: var(--color-blue);
+    border-color: unset;
+    border-radius: 15px;
+}
 /*breackpoints*/
+@media (min-width: 1650px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1550px;
+    }
+}
 @media(max-width: 990px){
     .info-box{
         position: static;
         top: unset;
         transform: unset;
     }
+    .mobile-bg{
+        background: url('/images/login-registration-page/bg.png') center / cover no-repeat fixed;
+        min-height: 100vh;
+    }
+    header{
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    .nav-link{
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        width: fit-content;
+    }
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: white;
+}
+    .rounded-pill.bg-danger{
+        background: white !important;
+        color: #0EA5E9;
+    }
+    .badge{
+        font-size: 12px;
+    }
+    .text-sm-white{
+        color: white;
+    }
+    .pt-sm-custom{
+        padding-top: 100px !important;
+    }
 }
 @media(max-width: 768px){
     .form-control{
     padding-bottom: 10px;
     }
+    .pagination{
+    padding: 5px 10px;
+    border-radius: 50px;
+    align-items: center;
+    --bs-pagination-font-size: 1.2rem;
+}
+.page-link{
+    padding: 3px 15px;
+}
 }
 @media(max-width: 360px){
     .select-control{
