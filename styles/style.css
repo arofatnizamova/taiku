@@ -29,6 +29,12 @@ body{
 .w-lg-40{
     width: 40%;
 }
+.shadow-box{
+    box-shadow: 0 0 30px 0 rgba(159, 159, 159, 0.25);
+}
+.bg-light-lg{
+    background: #F6F6F6;
+}
 /*ui kit*/
 a{
     color: inherit;
@@ -211,6 +217,126 @@ a{
 .avatar-height{
     height: 300px;
 }
+/*wizard*/
+.wizard-container {
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 30px;
+}
+.wizard-nav {
+    position: relative;
+    margin-bottom: 40px;
+}
+.connecting-line {
+    height: 2px;
+    background: var(--color-corp);
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.nav-tabs {
+    border-bottom: none;
+    position: relative;
+    z-index: 2;
+    justify-content: space-between;
+}
+.nav-link {
+    padding: 0;
+    border: none !important;
+    position: relative;
+    background: transparent;
+}
+.step-indicator {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--color-corp);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #555;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: var(--color-corp);
+    background-color: unset;
+    border-color: var(--bs-nav-tabs-link-active-border-color);
+}
+.nav-link.active .step-indicator {
+    border-color: var(--color-corp);
+    background: var(--color-corp);
+}
+.nav-link.active .step-indicator i {
+    color: white;
+}
+.nav-link.completed .step-indicator {
+    border-color: var(--color-corp);
+            
+}
+.nav-link.completed .step-indicator i {
+    color: black;
+}
+.tab-content {
+    position: relative;
+    min-height: 300px;
+}
+.tab-pane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.tab-pane.active {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+}
+.step-actions {
+    margin-top: 30px;
+}
+.step-title {
+    display: block;
+    margin-top: 10px;
+}
+
+.tagify {
+    --tag-border-radius: 50px;
+    --tag-bg: var(--color-corp);
+    --tag-pad: 0.3em 0.5em;
+    --tags-border-color: unset;
+}
+.tagify__tag-text {
+    color: white;
+}
+
+.tagify__tag__removeBtn {
+    color: white;
+    margin-left: 6px;
+}
+.upload-label {
+    display: inline-block;
+    background-color: #c8102e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.upload-label input {
+    display: none;
+}
+.nav-link {
+    color: #606060;
+}
 /*breackpoints*/
 @media (min-width: 1650px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
@@ -227,13 +353,6 @@ a{
         background: url('/images/login-registration-page/bg.png') center / cover no-repeat fixed;
         min-height: 100vh;
     }
-    header{
-        position: absolute;
-        z-index: 2;
-        width: 100%;
-        top: 0;
-        left: 0;
-    }
     .nav-link{
         color: white;
         font-size: 22px;
@@ -242,7 +361,7 @@ a{
     }
     .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
     color: white;
-}
+    }
     .rounded-pill.bg-danger{
         background: white !important;
         color: #0EA5E9;
@@ -258,7 +377,10 @@ a{
     }
     .w-lg-40{
     width: 100%;
-}
+    }
+    .step-title {
+        display: none !important;
+    }
 }
 @media(max-width: 768px){
     .form-control{
@@ -269,21 +391,30 @@ a{
     border-radius: 50px;
     align-items: center;
     --bs-pagination-font-size: 1.2rem;
-}
-.page-link{
-    padding: 3px 15px;
-}
-.fs-large .fs-paragraph,.fs-large .fs-title {
-    font-size: 24px;
-}
-.fs-large .fs-span-2 {
-    font-size: 20px;
-}
+    }
+    .page-link{
+        padding: 3px 15px;
+    }
+    .fs-large .fs-paragraph,.fs-large .fs-title {
+        font-size: 24px;
+    }
+    .fs-large .fs-span-2 {
+        font-size: 20px;
+    }
 }
 @media(max-width: 576px){
     .avatar-height{
     height: 400px;
-}
+    }
+    .step-indicator {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+    }
+    .wizard-container {
+        padding: 5px;
+    }
 }
 @media(max-width: 360px){
     .select-control{
