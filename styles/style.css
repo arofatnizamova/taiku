@@ -17,6 +17,9 @@ body{
 .text-blue{
     color: var(--color-blue);
 }
+.text-dirty-blue{
+    color: #426376;
+}
 .bg-light{
     background:#F9F9F9;
 }
@@ -28,6 +31,9 @@ body{
 }
 .w-lg-40{
     width: 40%;
+}
+.w-lg-50{
+    width: 50%;
 }
 .shadow-box{
     box-shadow: 0 0 30px 0 rgba(159, 159, 159, 0.25);
@@ -337,6 +343,17 @@ a{
 .nav-link {
     color: #606060;
 }
+.animation-scale{
+    transition: all 0.3s ease;
+}
+.animation-scale:hover{
+    transform: scale(1.5);
+}
+.table, 
+  .table th, 
+  .table td {
+    border: none !important;
+  }
 /*breackpoints*/
 @media (min-width: 1650px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
@@ -375,7 +392,7 @@ a{
     .pt-sm-custom{
         padding-top: 100px !important;
     }
-    .w-lg-40{
+    .w-lg-40, .w-lg-50{
     width: 100%;
     }
     .step-title {
@@ -401,6 +418,7 @@ a{
     .fs-large .fs-span-2 {
         font-size: 20px;
     }
+
 }
 @media(max-width: 576px){
     .avatar-height{
