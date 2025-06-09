@@ -41,6 +41,9 @@ body{
 .bg-light-lg{
     background: #F6F6F6;
 }
+.bg-lg-white{
+    background: white;
+}
 /*ui kit*/
 a{
     color: inherit;
@@ -223,6 +226,9 @@ a{
 .avatar-height{
     height: 300px;
 }
+.avatar-height-2{
+    height: 360px;
+}
 /*wizard*/
 .wizard-container {
     border-radius: 20px;
@@ -354,6 +360,13 @@ a{
   .table td {
     border: none !important;
   }
+
+.arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
 /*breackpoints*/
 @media (min-width: 1650px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
